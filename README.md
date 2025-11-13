@@ -14,6 +14,71 @@ The primary objective is to provide the best possible health advice immediately 
 - Using coaching/motivational strategies (e.g., Transtheoretical Model stages) to encourage sustainable behavior change.
 ---
 
+## File structure
+
+health-rag-pipeline/
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── app.py
+│   ├── config.py
+│   │
+│   ├── kb_ingestion/
+│   │   ├── __init__.py
+│   │   ├── preprocess_structured.py
+│   │   ├── preprocess_unstructured.py
+│   │   └── indexer.py
+│   │
+│   ├── retrieval/
+│   │   ├── __init__.py
+│   │   ├── retriever.py
+│   │   └── tools.py
+│   │
+│   ├── agent/
+│   │   ├── __init__.py
+│   │   ├── agent_builder.py
+│   │   └── workflows.py
+│   │
+│   └── utils/
+│       ├── __init__.py
+│       ├── data_utils.py
+│       ├── metrics_utils.py
+│       └── withings_integration.py
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_preprocess.py
+│   ├── test_indexer.py
+│   ├── test_retriever.py
+│   ├── test_agent.py
+│   │
+│   └── benchmarks/
+│       ├── benchmark_retrieval.py
+│       └── benchmark_agent.py
+│
+├── configs/
+│   ├── bedrock_config.json
+│   ├── pinecone_config.json
+│   └── kb_metadata.json
+│
+├── deploy/
+│   ├── lambda_function.py
+│   ├── serverless.yml / sam.yaml
+│   └── ci_cd/
+│       └── (GitHub Actions / CodePipeline configs)
+│
+├── data/
+│  ├── structured/
+│  └── unstructured/
+│
+├── requirements.txt
+├── Dockerfile
+├── .gitignore
+├── .env.example
+├── pyproject.toml / setup.py
+
+---
+
 ## Features
 - KB Ingestion: Preprocess and index structured CSVs (nutrition data) and unstructured PDFs/MDs (guidelines/books).
 - RAG Retrieval: Hybrid semantic/keyword search via LlamaIndex and Pinecone for factual grounding.
