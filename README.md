@@ -19,7 +19,7 @@ The primary objective is to provide the best possible health advice immediately 
 ---
 
 ## File structure
-
+```
 health-rag-pipeline/
 ├── src/
 │   ├── __init__.py
@@ -80,7 +80,7 @@ health-rag-pipeline/
 ├── .gitignore
 ├── .env.example
 ├── pyproject.toml / setup.py
-
+```
 ---
 
 ## Features
